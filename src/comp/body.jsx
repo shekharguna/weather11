@@ -70,7 +70,7 @@ useEffect(() => {
 return (
   <>
 
-    <div className='bg-gradient-to-b from-pink-600 to-fuchsia-400 w-full h-screen font-bricolage'>
+    <div className='bg-gradient-to-b from-slate-700 to-blue-200 w-full h-screen font-bricolage'>
 
       <div className=' text-3xl md:text-6xl  text-white text-center p-4'>
         Weather Forecast
