@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
-import clouds from "../assets/cloudy.png"
 import rain from "../assets/raining.png"
-
+import haze from "../assets/haze.png"
 import { FaSearch } from "react-icons/fa"
 import air from "../assets/air.png"
 import humidity from "../assets/humidity.png"
@@ -14,13 +13,17 @@ import clear from "../assets/sun.png"
 import axios from 'axios'
 
 function Body() {
+
+const today=new Date()
+const aaj=today.getDate()+"/"+today.getMonth()+"/"+today.getFullYear()
+
   const [data, setData] = useState({
     celcius: "",
     windspeed: "",
     pressure: "",
     humidity: "",
     city: " ",
-    date: "18-08-2023",
+    date: aaj,
     condition: " ",
     country: "",
     image: " ",
@@ -44,6 +47,9 @@ function Body() {
           case "Rain":
             data.image= rain;
             break;
+            case "Haze":
+              data.image= haze;
+              break;
           
         }
 
@@ -56,7 +62,9 @@ function Body() {
 
     }
 )
-.catch ((err) => { console.log(err) })
+.catch ((err) => { console.log(err) 
+alert("Invalid name (Type different name)")
+})
 }
 }
 
@@ -76,7 +84,7 @@ return (
         Weather Forecast
       </div>
       <div className='flex flex-row justify-center '>
-        <input type='text' placeholder='Search for cities' onChange={(e) => setName(e.target.value)} className='mt-5 md:w-96 h-10 md:h-14 w-52 rounded-md text-lg md:text-2xl focus:placeholder-transparent focus:outline-none' />
+        <input type='text' placeholder='Search for cities' onChange={(e) => setName(e.target.value)}  className='mt-5 md:w-96 h-10 md:h-14 w-52 rounded-md text-lg md:text-2xl focus:placeholder-transparent focus:outline-none' />
         <button className='hover:bg-slate-500 px-3 py-2 rounded-md mt-5 ' onClick={handleClick}><FaSearch size={25} /></button>
       </div>
       <div className='flex flex-col  items-center my-8  mx-auto '>
