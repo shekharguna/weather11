@@ -79,7 +79,7 @@ return (
   <>
 
     <div className='bg-gradient-to-b from-slate-700 to-blue-200 w-full h-screen  font-bricolage'>
-<div className=''>
+
       <div className=' text-3xl md:text-4xl  text-white text-center p-4'>
         Weather Forecast
       </div>
@@ -130,7 +130,7 @@ return (
 
       </div>
       </div>
-    </div>
+    
 
   </>
 )
